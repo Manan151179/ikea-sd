@@ -1,11 +1,18 @@
 # ---------------------------------------------------------------
-# Torch is pre-installed on Colab T4 (torch==2.2.0+cu121).
-# Do NOT reinstall torch/torchvision via pip in Colab; doing so
-# will break the CUDA environment. The lines below are pinned for
-# reference and for local / non-Colab environments only.
-# In Colab, skip these two lines:
-#   torch==2.2.0
-#   torchvision==0.17.0
+# Colab-managed packages — DO NOT reinstall via pip in Colab.
+#
+# torch / torchvision  Pre-installed on T4 (torch==2.2.0+cu121).
+#   Reinstalling breaks the CUDA environment.
+#
+# numpy                Colab ships numpy 2.x and compiles pandas /
+#   scipy / h5py against that ABI. Downgrading to 1.x causes a
+#   "numpy.dtype size changed" binary-incompatibility error at import.
+#   The lines below are for local / non-Colab environments only.
+#   In Colab, skip all four lines:
+#     torch==2.2.0
+#     torchvision==0.17.0
+#     numpy==1.26.4    <- also skip in Colab
+#     pandas==2.2.2    <- also skip if already present
 # ---------------------------------------------------------------
 torch==2.2.0
 torchvision==0.17.0
@@ -29,7 +36,11 @@ scipy==1.13.0
 h5py==3.11.0
 
 # Numerics and visualisation
-numpy==1.26.4
+# numpy — version intentionally unpinned; Colab provides numpy 2.x and the
+#   compiled ABI must not be broken by a downgrade. Local envs get whatever
+#   pip resolves. Pin explicitly here only for fully isolated reproducibility:
+#   numpy==1.26.4  (numpy 1.x) or numpy==2.0.2 (numpy 2.x, needs pandas>=2.1)
+numpy>=1.26.4
 pandas==2.2.2
 Pillow==10.3.0
 matplotlib==3.8.4
