@@ -1,0 +1,5 @@
+data/raw/
+outputs/generated_images/
+*.ckpt
+*.safetensors
+*.mat
