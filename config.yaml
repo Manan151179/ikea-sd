@@ -1,0 +1,25 @@
+model:
+  base_model_id: "runwayml/stable-diffusion-v1-5"
+  controlnet_model_id: "lllyasviel/sd-controlnet-mlsd"
+  dtype: "fp16"          # float16 keeps VRAM under 15 GB on T4
+  device: "cuda"
+
+generation:
+  num_inference_steps: 30
+  guidance_scale: 7.5
+  controlnet_conditioning_scale: 1.0
+  height: 512
+  width: 512
+  seeds: [42, 1337, 2024]
+  num_scenes_sample: 50  # scenes sampled from the dataset per run
+
+paths:
+  drive_root: "/content/drive/MyDrive/ikea-sd"
+  data_raw: "/content/drive/MyDrive/ikea-sd/data/raw"
+  data_processed: "/content/drive/MyDrive/ikea-sd/data/processed"
+  outputs: "/content/drive/MyDrive/ikea-sd/outputs"
+  db_path: "/content/drive/MyDrive/ikea-sd/results.db"
+
+evaluation:
+  clip_model_name: "ViT-B-32"
+  lpips_net: "alex"       # AlexNet backbone; fastest and standard for LPIPS

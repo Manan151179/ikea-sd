@@ -1,5 +1,32 @@
-data/raw/
-outputs/generated_images/
-*.ckpt
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Raw data and large outputs (tracked via .gitkeep only)
+data/raw/**
+!data/raw/.gitkeep
+outputs/generated_images/**
+!outputs/generated_images/.gitkeep
+
+# Model weights
 *.safetensors
+*.ckpt
+*.pt
+*.bin
+
+# Dataset files
 *.mat
+
+# Secrets
+.env
+
+# Model cache
+models_cache/
+
+# OS noise
+.DS_Store
+Thumbs.db

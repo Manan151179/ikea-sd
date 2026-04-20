@@ -1,0 +1,40 @@
+# ---------------------------------------------------------------
+# Torch is pre-installed on Colab T4 (torch==2.2.0+cu121).
+# Do NOT reinstall torch/torchvision via pip in Colab; doing so
+# will break the CUDA environment. The lines below are pinned for
+# reference and for local / non-Colab environments only.
+# In Colab, skip these two lines:
+#   torch==2.2.0
+#   torchvision==0.17.0
+# ---------------------------------------------------------------
+torch==2.2.0
+torchvision==0.17.0
+
+# Diffusion stack
+diffusers==0.27.2
+transformers==4.40.2
+accelerate==0.30.1
+safetensors==0.4.3
+
+# ControlNet preprocessing
+controlnet-aux==0.0.7
+
+# Evaluation metrics
+open-clip-torch==2.24.0
+lpips==0.1.4
+torchmetrics[image]==1.3.2
+
+# Data loading
+scipy==1.13.0
+h5py==3.11.0
+
+# Numerics and visualisation
+numpy==1.26.4
+pandas==2.2.2
+Pillow==10.3.0
+matplotlib==3.8.4
+seaborn==0.13.2
+tqdm==4.66.4
+
+# Config
+pyyaml==6.0.1
