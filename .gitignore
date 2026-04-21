@@ -31,9 +31,8 @@ data_drive_processed
 # Submission folder (local only — PPTX and video script stay off GitHub)
 submission/
 
-# Screen recordings and video files
-*.mov
-*.mp4
+# Screen recordings — tracked via Git LFS, not excluded
+# *.mov and *.mp4 are handled by .gitattributes
 *.avi
 *.mkv
 *.webm
