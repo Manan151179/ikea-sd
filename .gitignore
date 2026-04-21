@@ -9,8 +9,34 @@ __pycache__/
 # Raw data and large outputs (tracked via .gitkeep only)
 data/raw/**
 !data/raw/.gitkeep
+!data/raw/README.md
+data/processed/structured_scenes.json
 outputs/generated_images/**
 !outputs/generated_images/.gitkeep
+outputs/grids/**
+!outputs/grids/.gitkeep
+outputs/metrics.csv
+outputs/pilot/
+
+# Symlinks to Google Drive (local only)
+outputs_drive
+data_drive_processed
+
+# Database
+*.db
+
+# Zip files
+*.zip
+
+# Submission folder (local only — PPTX and video script stay off GitHub)
+submission/
+
+# Screen recordings and video files
+*.mov
+*.mp4
+*.avi
+*.mkv
+*.webm
 
 # Model weights
 *.safetensors
